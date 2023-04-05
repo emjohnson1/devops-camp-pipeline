@@ -9,7 +9,8 @@ pipeline {
         HARBOR_PROJECT = 'ej-harbor-project'
         APP_IMAGE_NAME = 'app'
         DB_IMAGE_NAME = 'db'
-    }stages {
+    }
+    stages {
         stage('Application repository') {
             steps {
                 echo "Cloning application repository"
@@ -34,7 +35,8 @@ pipeline {
                 }
                 echo "Building application image"
                 //TODO("Lab 4 - Artifact Management"): build the docker app image
-            }post {
+            } 
+            post {
                 always {
                     echo "Clean local $APP_IMAGE_NAME image"
                     script {
@@ -61,7 +63,8 @@ pipeline {
                 }
                 echo "Building database image"
                 //TODO("Lab 4 - Artifact Management"): build the docker db image
-            }post {
+            } 
+            post {
                 always {
                     echo "Clean local $DB_IMAGE_NAME image"
                     script {
