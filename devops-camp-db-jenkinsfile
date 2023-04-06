@@ -10,7 +10,7 @@ pipeline {
     }
     //TODO: add environment variables
     stages { 
-        stage('Application repository') 
+        
         stage('DB changes: true') {
            when {
               environment name: 'BUILD_DB', value: 'true'
